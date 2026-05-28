@@ -19,7 +19,7 @@ canvas.height = 500;
 //
 //  PLAYER SPRITE SHEET  →  player.png
 //    Expected layout (each frame 48×48 px):
-//      Row 0 (y=0)   : Run frames  — 6 frames across
+//      Row 0 (y=0)   : Run frames  —  frames across
 //      Row 1 (y=48)  : Jump frame  — 1 frame
 //      Row 2 (y=96)  : Duck frame  — 1 frame
 //      Row 3 (y=144) : Idle frame  — 1 frame
@@ -52,7 +52,7 @@ enemyImg.onerror  = () => { assetsLoaded++; };
 //  CONSTANTS
 // ============================================================
 const GRAVITY      = 0.55;
-const JUMP_FORCE   = -13;
+const JUMP_FORCE   = -11;
 const MOVE_SPEED   = 4.5;
 const FRAME_W      = 48;   // sprite frame width  (px)
 const FRAME_H      = 48;   // sprite frame height (px)
@@ -76,11 +76,11 @@ const platforms = [
   // Mid-height platforms for jumping challenges
   { x: 120,  y: 340,      w: 110,  h: 16,  color: '#6ab04c' },
   { x: 280,  y: 280,      w: 100,  h: 16,  color: '#6ab04c' },
-  { x: 420,  y: 230,      w: 90,   h: 16,  color: '#6ab04c' },
+  { x: 520,  y: 230,      w: 90,   h: 16,  color: '#6ab04c' },
 
   // High platform with a coin reward zone
   { x: 650,  y: 290,      w: 120,  h: 16,  color: '#6ab04c' },
-  { x: 790,  y: 450,      w: 110,  h: 16,  color: '#6ab04c' },
+  { x: 790,  y: 150,      w: 110,  h: 16,  color: '#6ab04c' },
 
   // LOW TUNNEL — player must duck to pass (ceiling at y=370, floor at y=430)
   // Ceiling block
@@ -99,6 +99,7 @@ const coins = [
   { x: 530,  y: 340, r: 8, collected: false },
   { x: 710,  y: 260, r: 8, collected: false },
   { x: 840,  y: 320, r: 8, collected: false },
+  { x: 840,  y: 120, r: 8, collected: false },
   // Coins inside the tunnel (require ducking)
   { x: 730,  y: 410, r: 8, collected: false },
   { x: 760,  y: 410, r: 8, collected: false },
@@ -347,10 +348,10 @@ function drawBackground() {
 
   // Distant mountains
   ctx.fillStyle = '#1e3a5f';
-  drawMountain(80,  380, 160);
-  drawMountain(260, 380, 140);
-  drawMountain(500, 380, 180);
-  drawMountain(720, 380, 150);
+  drawMountain(80,  430, 160);
+  drawMountain(190, 430, 140);
+  drawMountain(600, 430, 200);
+  drawMountain(770, 430, 150);
 
   // Ground fill below platforms
   ctx.fillStyle = '#2d5a27';
