@@ -171,7 +171,7 @@ const player = {
   frame: 0,
   frameTimer: 0,
   frameDelay: 8,
-  runFrames: 6,
+  runFrames: 3,
   lives: 3,
   score: 0,
   invincible: 0,   // invincibility frames after hit
